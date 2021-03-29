@@ -15,16 +15,17 @@ namespace PhotoAlbumGenerator
     {
         string html1 = "<!doctype html>\r\n" +
 "\r\n" +
-"<html lang=\"en\"\r\n" +
+"<html lang=\"fr\"\r\n" +
 "    class=\"minimal-style is-menu-fixed is-always-fixed is-selection-shareable blog-animated header-light header-small\"\r\n" +
 "    data-effect=\"slideUp\">\r\n" +
 "\r\n" +
 "<head>\r\n" +
 "    <meta charset=\"utf-8\">\r\n" +
 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" +
-"    <meta name=\"description\" content=\"Impose - Responsive HTML5 Template\">\r\n" +
+"    <meta name=\"description\" content=\"Photos de Martin Marguerat, album ";
+        string html1_1 = "\">\r\n" +
 "    <meta name=\"keywords\" content=\"personal, blog, html5\">\r\n" +
-"    <meta name=\"author\" content=\"Pixelwars\">\r\n" +
+"    <meta name=\"author\" content=\"Martin Marguerat\">\r\n" +
 "    <title>"; //Les Digitales 2020
         string html2 = " - Martin Marguerat</title>\r\n" +
 "\r\n" +
@@ -33,7 +34,7 @@ namespace PhotoAlbumGenerator
 "    <link rel=\"apple-touch-icon\" href=\"/images/ico/apple-touch-icon.png\" />\r\n" +
 "\r\n" +
 "    <!-- FONTS -->\r\n" +
-"    <link\r\n" +
+"    <link rel=\"stylesheet\" media=\"print\" onload=\"this.onload=null;this.removeAttribute('media');\"\r\n" +
 "        href=\"https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans:400,400i,700,700i|Poppins:300,400,500,600,700\"\r\n" +
 "        rel=\"stylesheet\">\r\n" +
 "\r\n" +
@@ -54,6 +55,30 @@ namespace PhotoAlbumGenerator
 "\r\n" +
 "    <!-- INITIAL SCRIPTS -->\r\n" +
 "    <script src=\"/js/modernizr.min.js\"></script>\r\n" +
+"    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>\r\n" +
+"    <script>\r\n" +
+"        if (!window.jQuery) {\r\n" +
+"            document.write('<script src=\"js/jquery-3.1.1.min.js\"><\\/script>');\r\n" +
+"        }\r\n" +
+"    </script>\r\n" +
+"    <!-- Global site tag (gtag.js) - Google Analytics -->\r\n" +
+"    <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-180198114-1\"></script>\r\n" +
+"    <script>\r\n" +
+"        window.dataLayer = window.dataLayer || [];\r\n" +
+"        function gtag() { dataLayer.push(arguments); }\r\n" +
+"        gtag('js', new Date());\r\n" +
+"\r\n" +
+"        gtag('config', 'UA-180198114-1');\r\n" +
+"    </script>\r\n" +
+"    <script src=\"https://code.jquery.com/jquery-3.1.1.js\"\r\n" +
+"        integrity=\"sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=\" crossorigin=\"anonymous\">\r\n" +
+"        </script>\r\n" +
+"    <script>\r\n" +
+"        $(function () {\r\n" +
+"            $(\"#header\").load(\"/header.html\");\r\n" +
+"            $(\"#footer\").load(\"/footer.html\");\r\n" +
+"        });\r\n" +
+"    </script>\r\n" +
 "</head>\r\n" +
 "\r\n" +
 "<body class=\" single \">\r\n" +
@@ -102,7 +127,7 @@ namespace PhotoAlbumGenerator
         string htmlimage2 = "\"><img\r\n" +
 "                                                    src=\""; //nom/image
         string htmlimage3 = "\" class=\"attachment-thumbnail\"\r\n" +
-"                                                    alt=\"slide-image\"></a>\r\n" +
+"                                                    alt=\"slide-image\" loading=\"lazy\"></a>\r\n" +
 "                                        </div>\r\n" +
 "                                    </figure>\r\n";
         string html7 = "                                </div>\r\n" +
@@ -137,24 +162,24 @@ namespace PhotoAlbumGenerator
 "                                    <a rel=\"nofollow\" target=\"_blank\"\r\n" +
 "                                        href=\"mailto:?subject=Regarde ces photos de Martin Marguerat&amp;body=Regarde cet album photos de Martin Marguerat : "; //Les Digitales 2020
         string html9 = " - https://martinmarguerat.ch/portfolio/"; //les-digitales-2020
-        string html10 = ".html\r\n" +
+        string html10 = "\"\r\n" +
 "                                        title=\"Envoyer à un ami par e-mail\"><i class=\"pw-icon-mail\"></i></a>\r\n" +
 "\r\n" +
 "                                    <a rel=\"nofollow\" target=\"_blank\"\r\n" +
-"                                        href=\"http://twitter.com/home?status=Voir les photos de: "; //Les Digitales 2020
+"                                        href=\"https://twitter.com/intent/tweet?text=Voir les photos de: "; //Les Digitales 2020
         string html11 = " (Martin Marguerat) https://martinmarguerat.ch/portfolio/"; //les-digitales-2020
         string html12 = ".html\"\r\n" +
 "                                        title=\"Partager sur Twitter\"><i class=\"pw-icon-twitter\"></i></a>\r\n" +
 "\r\n" +
 "                                    <a rel=\"nofollow\" target=\"_blank\"\r\n" +
-"                                        href=\"http://www.facebook.com/sharer.php?u=https://martinmarguerat.ch/portfolio/"; //les-digitales-2020
+"                                        href=\"http://www.facebook.com/sharer/sharer.php?u=https://martinmarguerat.ch/portfolio/"; //les-digitales-2020
         string html13 = "&amp;t="; //Les Digitales 2020
-        string html14 = ".html\"\r\n" +
+        string html14 = "\"\r\n" +
 "                                        title=\"Partager sur Facebook\"><i class=\"pw-icon-facebook\"></i></a>\r\n" +
 "\r\n" +
 "                                    <a rel=\"nofollow\" target=\"_blank\"\r\n" +
 "                                        href=\"https://plus.google.com/share?url=https://martinmarguerat.ch/portfolio/"; //les-digitales-2020
-        string html15 = ".html\"\r\n" +
+        string html15 = "\"\r\n" +
 "                                        title=\"Share this post on Google+\"><i class=\"pw-icon-gplus\"></i></a>\r\n" +
 "                                </div>\r\n" +
 "                                <!-- .share-links -->\r\n" +
@@ -164,13 +189,13 @@ namespace PhotoAlbumGenerator
 "                                    <div class=\"nav-previous col-xs-6\">\r\n" +
 "                                        <h4>ALBUM PRÉCÉDANT</h4>\r\n" +
 "                                        <a href=\"/portfolio/"; //link
-        string html16 = ".html\" rel=\"prev\">"; //TITRE album précédent
+        string html16 = "\" rel=\"prev\">"; //TITRE album précédent
         string html17 = "</a>\r\n" +
 "                                    </div>\r\n" +
 "                                    <div class=\"nav-next col-xs-6\">\r\n" +
 "                                        <h4>ALBUM SUIVANT</h4>\r\n" +
 "                                        <a href=\"/portfolio/"; //link
-        string html18 = ".html\" rel=\"next\">"; //TITRE album suivant
+        string html18 = "\" rel=\"next\">"; //TITRE album suivant
         string html19 = "</a>\r\n" +
 "                                    </div>\r\n" +
 "                                </nav>\r\n" +
@@ -192,11 +217,11 @@ namespace PhotoAlbumGenerator
 "                                <header class=\"entry-header\">\r\n" +
 "                                    <!-- .entry-title -->\r\n" +
 "                                    <h2 class=\"entry-title\"><a href=\"/portfolio/"; //recommandé 1 Nom
-        string html24 = "blog-single.html\">"; //Recommandé 1
+        string html24 = "\">"; //Recommandé 1
         string html25 = "</a>\r\n" +
 "                                    </h2>\r\n" +
 "                                    <p><a href=\"/portfolio/"; //Recommandé 1 Nom
-        string html26 = ".html\" class=\"more-link\">Voir l'album</a></p>\r\n" +
+        string html26 = "\" class=\"more-link\">Voir l'album</a></p>\r\n" +
 "                                </header>\r\n" +
 "                                <!-- .entry-header -->\r\n" +
 "                            </div>\r\n" +
@@ -218,30 +243,6 @@ namespace PhotoAlbumGenerator
 "    <!-- page -->\r\n" +
 "\r\n" +
 "    <!-- SCRIPTS -->\r\n" +
-"    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>\r\n" +
-"    <script>\r\n" +
-"        if (!window.jQuery) {\r\n" +
-"            document.write('<script src=\"js/jquery-3.1.1.min.js\"><\\/script>');\r\n" +
-"        }\r\n" +
-"    </script>\r\n" +
-"    <!-- Global site tag (gtag.js) - Google Analytics -->\r\n" +
-"    <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-180198114-1\"></script>\r\n" +
-"    <script>\r\n" +
-"        window.dataLayer = window.dataLayer || [];\r\n" +
-"        function gtag() { dataLayer.push(arguments); }\r\n" +
-"        gtag('js', new Date());\r\n" +
-"\r\n" +
-"        gtag('config', 'UA-180198114-1');\r\n" +
-"    </script>\r\n" +
-"    <script src=\"https://code.jquery.com/jquery-3.3.1.js\"\r\n" +
-"        integrity=\"sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=\" crossorigin=\"anonymous\">\r\n" +
-"        </script>\r\n" +
-"    <script>\r\n" +
-"        $(function () {\r\n" +
-"            $(\"#header\").load(\"/header.html\");\r\n" +
-"            $(\"#footer\").load(\"/footer.html\");\r\n" +
-"        });\r\n" +
-"    </script>\r\n" +
 "    <script src=\"/js/jquery-migrate-3.0.0.min.js\"></script>\r\n" +
 "    <script src=\"/js/fastclick.js\"></script>\r\n" +
 "    <script src=\"/js/jquery.fitvids.js\"></script>\r\n" +
@@ -279,25 +280,30 @@ namespace PhotoAlbumGenerator
             {
                 sw.Write(html1);
                 sw.Write(tbxTitre.Text);
+                sw.Write(html1_1);
+                sw.Write(tbxTitre.Text);
                 sw.Write(html2);
                 sw.Write(tbxTitre.Text);
                 sw.Write(html3);
                 switch(cbxCategorie.SelectedItem.ToString())
                 {
-                    case "Evénement":
-                        sw.Write("/portfolio/evenement.html");
+                    case "événement":
+                        sw.Write("../evenement");
                         break;
-                    case "Portrait":
-                        sw.Write("/portfolio/portrait.html");
+                    case "portrait":
+                        sw.Write("../portrait");
                         break;
-                    case "Paysage":
-                        sw.Write("/portfolio/paysage.html");
+                    case "paysage":
+                        sw.Write("../paysage");
                         break;
-                    case "Nature":
-                        sw.Write("/portfolio/nature.html");
+                    case "nature":
+                        sw.Write("../nature");
                         break;
-                    case "Street":
-                        sw.Write("/portfolio/street.html");
+                    case "street":
+                        sw.Write("../street");
+                        break;
+                    case "divers":
+                        sw.Write("../divers");
                         break;
                 }
                 sw.Write(html3_1);
