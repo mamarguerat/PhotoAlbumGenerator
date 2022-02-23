@@ -30,67 +30,72 @@ namespace PhotoAlbumGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string path = tbxFichiers.Text;
-            DirectoryInfo d = new DirectoryInfo(path);
-            string text = File.ReadAllText("main.html");
-            text = text.Replace("$TITLE", tbxTitre.Text);
-            text = text.Replace("$NAME", tbxNom.Text);
-
-            string category = "";
-            switch (cbxCategorie.SelectedItem.ToString())
+            foreach (DataRow row in App.Pages.Rows)
             {
-                case "événement":
-                    category = "evenement";
-                    break;
-                case "portrait":
-                    category = "portrait";
-                    break;
-                case "paysage":
-                    category = "paysage";
-                    break;
-                case "nature":
-                    category = "nature";
-                    break;
-                case "street":
-                    category = "street";
-                    break;
-                case "divers":
-                    category = "divers";
-                    break;
+                string path = row["Folder"].ToString();
+                DirectoryInfo d = new DirectoryInfo(path);
+                string text = File.ReadAllText("main.html");
+                text = text.Replace("$TITLE", row["Title"].ToString());
+                text = text.Replace("$NAME", row["Name"].ToString());
+
+                string category = "";
+                switch (row["Category"].ToString())
+                {
+                    case "événement":
+                        category = "evenement";
+                        break;
+                    case "portrait":
+                        category = "portrait";
+                        break;
+                    case "paysage":
+                        category = "paysage";
+                        break;
+                    case "nature":
+                        category = "nature";
+                        break;
+                    case "street":
+                        category = "street";
+                        break;
+                    case "divers":
+                        category = "divers";
+                        break;
+                }
+
+                text = text.Replace("$CATEGORY", category);
+                text = text.Replace("$DATE_SHORT", row["Date (2020-01-30)"].ToString());
+                text = text.Replace("$DATE", row["Date (30 janvier 2020)"].ToString());
+
+                text = text.Replace("$COMMENT", row["HTML text"].ToString());
+
+                FileInfo[] files = d.GetFiles("*.jpg");
+                string gallery = "";
+                for (int i = 0; i < files.Length; i++)
+                {
+                    string imageName = row["Name"].ToString() + "-" + i.ToString("D3") + ".jpg";
+                    File.Move(files[i].FullName, path + "\\" + imageName);
+
+                    string image = File.ReadAllText("gallery.html");
+                    image = image.Replace("$FILE_NAME", imageName);
+                    gallery = gallery + image;
+                }
+
+                text = text.Replace("$GALLERY", gallery);
+
+                text = text.Replace("$PREV_TITLE", row["Prev"].ToString());
+                text = text.Replace("$PREV", row["PrevName"].ToString());
+                text = text.Replace("$NEXT_TITLE", row["Next"].ToString());
+                text = text.Replace("$NEXT", row["NextName"].ToString());
+
+                string related = "";
+                related = related + WriteRecommande(row["Related1"].ToString(), row["Related1Name"].ToString());
+                related = related + WriteRecommande(row["Related2"].ToString(), row["Related2Name"].ToString());
+                related = related + WriteRecommande(row["Related3"].ToString(), row["Related3Name"].ToString());
+                text = text.Replace("$RELATED", related);
+
+                File.WriteAllText(path + "/index.html", text);
             }
 
-            text = text.Replace("$CATEGORY", category);
-            text = text.Replace("$DATE_SHORT", tbxDateYYYYMMDD.Text);
-            text = text.Replace("$DATE", tbxDate.Text);
 
-            text = text.Replace("$COMMENT", tbxText.Text);
-
-            FileInfo[] files = d.GetFiles("*.jpg");
-            string gallery = "";
-            for (int i = 0; i < files.Length; i++)
-            {
-                string imageName = tbxNom.Text + "-" + i.ToString("D3") + ".jpg";
-                File.Move(files[i].FullName, path + "\\" + imageName);
-
-                string image = File.ReadAllText("gallery.html");
-                image = image.Replace("$FILE_NAME", imageName);
-                gallery = gallery + image;
-            }
-
-            text = text.Replace("$GALLERY", gallery);
-
-            text = text.Replace("$PREV_TITLE", tbxPrecedantTitre.Text);
-            text = text.Replace("$PREV", tbxPrecedantNom.Text);
-            text = text.Replace("$NEXT_TITLE", tbxSuivantTitre.Text);
-            text = text.Replace("$NEXT", tbxSuivantNom.Text);
-
-            string related = "";
-            related = related + WriteRecommande(tbxRecommande1.Text, tbxRecommande1Nom.Text);
-            related = related + WriteRecommande(tbxRecommande2.Text, tbxRecommande2Nom.Text);
-            related = related + WriteRecommande(tbxRecommande3.Text, tbxRecommande3Nom.Text);
-            text = text.Replace("$RELATED", related);
-
-            File.WriteAllText(path + "/index.html", text);
 
             MessageBox.Show("Success", "Success", MessageBoxButtons.OK);
         }

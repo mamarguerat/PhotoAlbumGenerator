@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxTitre = new System.Windows.Forms.TextBox();
+            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pages = new PhotoAlbumGenerator.pages();
             this.tbxNom = new System.Windows.Forms.TextBox();
             this.tbxText = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,13 +69,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pages = new PhotoAlbumGenerator.pages();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hTMLTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,21 +86,27 @@
             this.related2NameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.related3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.related3NameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pages)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(478, 581);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(478, 704);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(318, 28);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Créer la page";
+            this.button1.Text = "Créer les pages";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -144,6 +145,16 @@
             this.tbxTitre.Size = new System.Drawing.Size(353, 20);
             this.tbxTitre.TabIndex = 4;
             this.tbxTitre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxTitre_KeyUp);
+            // 
+            // pagesBindingSource
+            // 
+            this.pagesBindingSource.DataMember = "Pages";
+            this.pagesBindingSource.DataSource = this.pages;
+            // 
+            // pages
+            // 
+            this.pages.DataSetName = "pages";
+            this.pages.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbxNom
             // 
@@ -425,6 +436,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -446,103 +460,11 @@
             this.related3DataGridViewTextBoxColumn,
             this.related3NameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pagesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 396);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 399);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(794, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 270);
             this.dataGridView1.TabIndex = 36;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.tbxRecommande3Nom);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.tbxTitre);
-            this.panel1.Controls.Add(this.tbxRecommande2Nom);
-            this.panel1.Controls.Add(this.tbxNom);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.tbxText);
-            this.panel1.Controls.Add(this.tbxRecommande1Nom);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.tbxRecommande3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.tbxRecommande2);
-            this.panel1.Controls.Add(this.tbxDate);
-            this.panel1.Controls.Add(this.tbxRecommande1);
-            this.panel1.Controls.Add(this.tbxDateYYYYMMDD);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.cbxCategorie);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.tbxFichiers);
-            this.panel1.Controls.Add(this.tbxPrecedantNom);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.tbxPrecedantTitre);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.tbxSuivantNom);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.tbxSuivantTitre);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 398);
-            this.panel1.TabIndex = 37;
-            // 
-            // pages
-            // 
-            this.pages.DataSetName = "pages";
-            this.pages.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "Pages";
-            this.pagesBindingSource.DataSource = this.pages;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(478, 552);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 38;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(559, 552);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 39;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(640, 552);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 40;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(721, 552);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 41;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -646,10 +568,98 @@
             this.related3NameDataGridViewTextBoxColumn.HeaderText = "Related3Name";
             this.related3NameDataGridViewTextBoxColumn.Name = "related3NameDataGridViewTextBoxColumn";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.tbxRecommande3Nom);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.tbxTitre);
+            this.panel1.Controls.Add(this.tbxRecommande2Nom);
+            this.panel1.Controls.Add(this.tbxNom);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.tbxText);
+            this.panel1.Controls.Add(this.tbxRecommande1Nom);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.tbxRecommande3);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.tbxRecommande2);
+            this.panel1.Controls.Add(this.tbxDate);
+            this.panel1.Controls.Add(this.tbxRecommande1);
+            this.panel1.Controls.Add(this.tbxDateYYYYMMDD);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.cbxCategorie);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.tbxFichiers);
+            this.panel1.Controls.Add(this.tbxPrecedantNom);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.tbxPrecedantTitre);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.tbxSuivantNom);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.tbxSuivantTitre);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(794, 398);
+            this.panel1.TabIndex = 37;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(478, 675);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 38;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Location = new System.Drawing.Point(559, 675);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 39;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(640, 675);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 40;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Location = new System.Drawing.Point(721, 675);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 41;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // tbxSearch
             // 
+            this.tbxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxSearch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Next", true));
-            this.tbxSearch.Location = new System.Drawing.Point(78, 552);
+            this.tbxSearch.Location = new System.Drawing.Point(78, 675);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(394, 20);
             this.tbxSearch.TabIndex = 36;
@@ -657,8 +667,9 @@
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 555);
+            this.label18.Location = new System.Drawing.Point(12, 678);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(60, 13);
             this.label18.TabIndex = 36;
@@ -668,7 +679,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 642);
+            this.ClientSize = new System.Drawing.Size(800, 735);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.btnNew);
@@ -682,11 +693,11 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pages)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
