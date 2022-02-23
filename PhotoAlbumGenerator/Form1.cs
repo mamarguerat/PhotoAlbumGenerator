@@ -149,5 +149,99 @@ namespace PhotoAlbumGenerator
         {
 
         }
+
+        //Use singleton pattern to create an instance
+        static pages db;
+        protected static pages App
+        {
+            get
+            {
+                if (db == null)
+                    db = new pages();
+                return db;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Read file, then load data to dataset
+            string fileName = string.Format("{0}//data.dat", Application.StartupPath);
+            if (File.Exists(fileName))
+                App.Pages.ReadXml(fileName);
+            pagesBindingSource.DataSource = App.Pages;
+            panel1.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //End edit, save dataset to file
+                pagesBindingSource.EndEdit();
+                App.Pages.AcceptChanges();
+                App.Pages.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
+                panel1.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                App.Pages.RejectChanges();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = true;
+            tbxTitre.Focus();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            pagesBindingSource.ResetBindings(false);
+            panel1.Enabled = false;
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                panel1.Enabled = true;
+                //Add a new row
+                App.Pages.AddPagesRow(App.Pages.NewPagesRow());
+                pagesBindingSource.MoveLast();
+                tbxTitre.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                App.Pages.RejectChanges();
+            }
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    pagesBindingSource.RemoveCurrent();
+            }
+        }
+
+        private void tbxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)//Enter key
+            {
+                if (!string.IsNullOrEmpty(tbxSearch.Text))
+                {
+                    //you can use linq to query data
+                    var query = from o in App.Pages
+                                where o.Title.ToLowerInvariant().Contains(tbxSearch.Text.ToLowerInvariant())
+                                select o;
+                    dataGridView1.DataSource = query.ToList();
+                }
+                else
+                    dataGridView1.DataSource = pagesBindingSource;
+            }
+        }
     }
 }

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="pages" targetNamespace="http://tempuri.org/pages.xsd" xmlns:mstns="http://tempuri.org/pages.xsd" xmlns="http://tempuri.org/pages.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="pages" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="pages" msprop:Generator_UserDSName="pages">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pages" msprop:Generator_TableClassName="PagesDataTable" msprop:Generator_TableVarName="tablePages" msprop:Generator_TablePropName="Pages" msprop:Generator_RowDeletingName="PagesRowDeleting" msprop:Generator_RowChangingName="PagesRowChanging" msprop:Generator_RowEvHandlerName="PagesRowChangeEventHandler" msprop:Generator_RowDeletedName="PagesRowDeleted" msprop:Generator_UserTableName="Pages" msprop:Generator_RowChangedName="PagesRowChanged" msprop:Generator_RowEvArgName="PagesRowChangeEvent" msprop:Generator_RowClassName="PagesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="HTML_x0020_text" msprop:Generator_ColumnVarNameInTable="columnHTML_text" msprop:Generator_ColumnPropNameInRow="HTML_text" msprop:Generator_ColumnPropNameInTable="HTML_textColumn" msprop:Generator_UserColumnName="HTML text" type="xs:string" minOccurs="0" />
+              <xs:element name="Date_x0020__x0028_30_x0020_janvier_x0020_2020_x0029_" msprop:Generator_ColumnVarNameInTable="_columnDate__30_janvier_2020_" msprop:Generator_ColumnPropNameInRow="_Date__30_janvier_2020_" msprop:Generator_ColumnPropNameInTable="_Date__30_janvier_2020_Column" msprop:Generator_UserColumnName="Date (30 janvier 2020)" type="xs:string" minOccurs="0" />
+              <xs:element name="Date_x0020__x0028_2020-01-30_x0029_" msprop:Generator_ColumnVarNameInTable="_columnDate__2020_01_30_" msprop:Generator_ColumnPropNameInRow="_Date__2020_01_30_" msprop:Generator_ColumnPropNameInTable="_Date__2020_01_30_Column" msprop:Generator_UserColumnName="Date (2020-01-30)" type="xs:string" minOccurs="0" />
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" type="xs:string" minOccurs="0" />
+              <xs:element name="Folder" msprop:Generator_ColumnVarNameInTable="columnFolder" msprop:Generator_ColumnPropNameInRow="Folder" msprop:Generator_ColumnPropNameInTable="FolderColumn" msprop:Generator_UserColumnName="Folder" type="xs:string" minOccurs="0" />
+              <xs:element name="Next" msprop:Generator_ColumnVarNameInTable="columnNext" msprop:Generator_ColumnPropNameInRow="Next" msprop:Generator_ColumnPropNameInTable="NextColumn" msprop:Generator_UserColumnName="Next" type="xs:string" minOccurs="0" />
+              <xs:element name="NextName" msprop:Generator_ColumnVarNameInTable="columnNextName" msprop:Generator_ColumnPropNameInRow="NextName" msprop:Generator_ColumnPropNameInTable="NextNameColumn" msprop:Generator_UserColumnName="NextName" type="xs:string" minOccurs="0" />
+              <xs:element name="Prev" msprop:Generator_ColumnVarNameInTable="columnPrev" msprop:Generator_ColumnPropNameInRow="Prev" msprop:Generator_ColumnPropNameInTable="PrevColumn" msprop:Generator_UserColumnName="Prev" type="xs:string" minOccurs="0" />
+              <xs:element name="PrevName" msprop:Generator_ColumnVarNameInTable="columnPrevName" msprop:Generator_ColumnPropNameInRow="PrevName" msprop:Generator_ColumnPropNameInTable="PrevNameColumn" msprop:Generator_UserColumnName="PrevName" type="xs:string" minOccurs="0" />
+              <xs:element name="Related1" msprop:Generator_ColumnVarNameInTable="columnRelated1" msprop:Generator_ColumnPropNameInRow="Related1" msprop:Generator_ColumnPropNameInTable="Related1Column" msprop:Generator_UserColumnName="Related1" type="xs:string" minOccurs="0" />
+              <xs:element name="Related1Name" msprop:Generator_ColumnVarNameInTable="columnRelated1Name" msprop:Generator_ColumnPropNameInRow="Related1Name" msprop:Generator_ColumnPropNameInTable="Related1NameColumn" msprop:Generator_UserColumnName="Related1Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Related2" msprop:Generator_ColumnVarNameInTable="columnRelated2" msprop:Generator_ColumnPropNameInRow="Related2" msprop:Generator_ColumnPropNameInTable="Related2Column" msprop:Generator_UserColumnName="Related2" type="xs:string" minOccurs="0" />
+              <xs:element name="Related2Name" msprop:Generator_ColumnVarNameInTable="columnRelated2Name" msprop:Generator_ColumnPropNameInRow="Related2Name" msprop:Generator_ColumnPropNameInTable="Related2NameColumn" msprop:Generator_UserColumnName="Related2Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Related3" msprop:Generator_ColumnVarNameInTable="columnRelated3" msprop:Generator_ColumnPropNameInRow="Related3" msprop:Generator_ColumnPropNameInTable="Related3Column" msprop:Generator_UserColumnName="Related3" type="xs:string" minOccurs="0" />
+              <xs:element name="Related3Name" msprop:Generator_ColumnVarNameInTable="columnRelated3Name" msprop:Generator_ColumnPropNameInRow="Related3Name" msprop:Generator_ColumnPropNameInTable="Related3NameColumn" msprop:Generator_UserColumnName="Related3Name" type="xs:string" minOccurs="0" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="PagesKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pages" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
