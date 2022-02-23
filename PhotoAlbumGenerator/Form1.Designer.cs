@@ -65,31 +65,11 @@
             this.tbxRecommande3Nom = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.text = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateyyyymmdd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.files = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.next_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.next_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prev_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prev_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_1_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_1_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_2_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_2_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_3_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.related_3_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(455, 426);
+            this.button1.Location = new System.Drawing.Point(455, 397);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(333, 28);
             this.button1.TabIndex = 0;
@@ -142,10 +122,8 @@
             // tbxText
             // 
             this.tbxText.Location = new System.Drawing.Point(96, 60);
-            this.tbxText.MaximumSize = new System.Drawing.Size(353, 394);
-            this.tbxText.MinimumSize = new System.Drawing.Size(353, 394);
             this.tbxText.Name = "tbxText";
-            this.tbxText.Size = new System.Drawing.Size(353, 394);
+            this.tbxText.Size = new System.Drawing.Size(353, 365);
             this.tbxText.TabIndex = 6;
             this.tbxText.Text = "";
             // 
@@ -396,142 +374,11 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "Recommandé 3";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(455, 397);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(333, 23);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Créer le json";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.title,
-            this.name,
-            this.text,
-            this.date,
-            this.dateyyyymmdd,
-            this.category,
-            this.files,
-            this.next_title,
-            this.next_name,
-            this.prev_title,
-            this.prev_name,
-            this.related_1_title,
-            this.related_1_name,
-            this.related_2_title,
-            this.related_2_name,
-            this.related_3_title,
-            this.related_3_name});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 460);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(888, 199);
-            this.dataGridView1.TabIndex = 37;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // title
-            // 
-            this.title.HeaderText = "Title";
-            this.title.Name = "title";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // text
-            // 
-            this.text.HeaderText = "HTML text";
-            this.text.Name = "text";
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date (30 janvier 2020)";
-            this.date.Name = "date";
-            // 
-            // dateyyyymmdd
-            // 
-            this.dateyyyymmdd.HeaderText = "Date (2020-01-30)";
-            this.dateyyyymmdd.Name = "dateyyyymmdd";
-            // 
-            // category
-            // 
-            this.category.HeaderText = "Category";
-            this.category.Items.AddRange(new object[] {
-            "événement",
-            "portrait",
-            "paysage",
-            "nature",
-            "street",
-            "divers"});
-            this.category.Name = "category";
-            // 
-            // files
-            // 
-            this.files.HeaderText = "Files";
-            this.files.Name = "files";
-            // 
-            // next_title
-            // 
-            this.next_title.HeaderText = "Next (title)";
-            this.next_title.Name = "next_title";
-            // 
-            // next_name
-            // 
-            this.next_name.HeaderText = "Next (name)";
-            this.next_name.Name = "next_name";
-            // 
-            // prev_title
-            // 
-            this.prev_title.HeaderText = "Previous (title)";
-            this.prev_title.Name = "prev_title";
-            // 
-            // prev_name
-            // 
-            this.prev_name.HeaderText = "Previous (name)";
-            this.prev_name.Name = "prev_name";
-            // 
-            // related_1_title
-            // 
-            this.related_1_title.HeaderText = "Related 1 (title)";
-            this.related_1_title.Name = "related_1_title";
-            // 
-            // related_1_name
-            // 
-            this.related_1_name.HeaderText = "Related 1 (name)";
-            this.related_1_name.Name = "related_1_name";
-            // 
-            // related_2_title
-            // 
-            this.related_2_title.HeaderText = "Related 2 (title)";
-            this.related_2_title.Name = "related_2_title";
-            // 
-            // related_2_name
-            // 
-            this.related_2_name.HeaderText = "Related 2 (name)";
-            this.related_2_name.Name = "related_2_name";
-            // 
-            // related_3_title
-            // 
-            this.related_3_title.HeaderText = "Related 3 (title)";
-            this.related_3_title.Name = "related_3_title";
-            // 
-            // related_3_name
-            // 
-            this.related_3_name.HeaderText = "Related 3 (name)";
-            this.related_3_name.Name = "related_3_name";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 671);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(800, 439);
             this.Controls.Add(this.tbxRecommande3Nom);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tbxRecommande2Nom);
@@ -568,10 +415,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.MaximumSize = new System.Drawing.Size(816, 478);
+            this.MinimumSize = new System.Drawing.Size(816, 478);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,25 +463,6 @@
         private System.Windows.Forms.TextBox tbxRecommande3Nom;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn text;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateyyyymmdd;
-        private System.Windows.Forms.DataGridViewComboBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn files;
-        private System.Windows.Forms.DataGridViewTextBoxColumn next_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn next_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prev_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prev_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_1_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_1_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_2_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_2_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_3_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn related_3_name;
     }
 }
 
