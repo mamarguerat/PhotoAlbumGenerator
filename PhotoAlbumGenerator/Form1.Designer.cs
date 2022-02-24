@@ -93,6 +93,9 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.tbxIndexLocation = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -169,7 +172,7 @@
             this.tbxText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "HTML text", true));
             this.tbxText.Location = new System.Drawing.Point(87, 58);
             this.tbxText.Name = "tbxText";
-            this.tbxText.Size = new System.Drawing.Size(353, 331);
+            this.tbxText.Size = new System.Drawing.Size(353, 317);
             this.tbxText.TabIndex = 6;
             this.tbxText.Text = "";
             // 
@@ -262,7 +265,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(457, 138);
+            this.label8.Location = new System.Drawing.Point(457, 124);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 16;
@@ -271,7 +274,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(457, 164);
+            this.label9.Location = new System.Drawing.Point(457, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 17;
@@ -280,7 +283,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(457, 216);
+            this.label10.Location = new System.Drawing.Point(457, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 13);
             this.label10.TabIndex = 19;
@@ -289,7 +292,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(457, 190);
+            this.label11.Location = new System.Drawing.Point(457, 176);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 18;
@@ -298,7 +301,7 @@
             // tbxSuivantNom
             // 
             this.tbxSuivantNom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "NextName", true));
-            this.tbxSuivantNom.Location = new System.Drawing.Point(575, 161);
+            this.tbxSuivantNom.Location = new System.Drawing.Point(575, 147);
             this.tbxSuivantNom.Name = "tbxSuivantNom";
             this.tbxSuivantNom.Size = new System.Drawing.Size(204, 20);
             this.tbxSuivantNom.TabIndex = 21;
@@ -306,7 +309,7 @@
             // tbxSuivantTitre
             // 
             this.tbxSuivantTitre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Next", true));
-            this.tbxSuivantTitre.Location = new System.Drawing.Point(575, 135);
+            this.tbxSuivantTitre.Location = new System.Drawing.Point(575, 121);
             this.tbxSuivantTitre.Name = "tbxSuivantTitre";
             this.tbxSuivantTitre.Size = new System.Drawing.Size(204, 20);
             this.tbxSuivantTitre.TabIndex = 20;
@@ -315,7 +318,7 @@
             // tbxPrecedantNom
             // 
             this.tbxPrecedantNom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "PrevName", true));
-            this.tbxPrecedantNom.Location = new System.Drawing.Point(575, 213);
+            this.tbxPrecedantNom.Location = new System.Drawing.Point(575, 199);
             this.tbxPrecedantNom.Name = "tbxPrecedantNom";
             this.tbxPrecedantNom.Size = new System.Drawing.Size(204, 20);
             this.tbxPrecedantNom.TabIndex = 23;
@@ -323,7 +326,7 @@
             // tbxPrecedantTitre
             // 
             this.tbxPrecedantTitre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Prev", true));
-            this.tbxPrecedantTitre.Location = new System.Drawing.Point(575, 187);
+            this.tbxPrecedantTitre.Location = new System.Drawing.Point(575, 173);
             this.tbxPrecedantTitre.Name = "tbxPrecedantTitre";
             this.tbxPrecedantTitre.Size = new System.Drawing.Size(204, 20);
             this.tbxPrecedantTitre.TabIndex = 22;
@@ -332,7 +335,7 @@
             // tbxRecommande3
             // 
             this.tbxRecommande3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related3", true));
-            this.tbxRecommande3.Location = new System.Drawing.Point(575, 343);
+            this.tbxRecommande3.Location = new System.Drawing.Point(575, 329);
             this.tbxRecommande3.Name = "tbxRecommande3";
             this.tbxRecommande3.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande3.TabIndex = 29;
@@ -341,7 +344,7 @@
             // tbxRecommande2
             // 
             this.tbxRecommande2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related2", true));
-            this.tbxRecommande2.Location = new System.Drawing.Point(575, 291);
+            this.tbxRecommande2.Location = new System.Drawing.Point(575, 277);
             this.tbxRecommande2.Name = "tbxRecommande2";
             this.tbxRecommande2.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande2.TabIndex = 28;
@@ -350,7 +353,7 @@
             // tbxRecommande1
             // 
             this.tbxRecommande1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related1", true));
-            this.tbxRecommande1.Location = new System.Drawing.Point(575, 239);
+            this.tbxRecommande1.Location = new System.Drawing.Point(575, 225);
             this.tbxRecommande1.Name = "tbxRecommande1";
             this.tbxRecommande1.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande1.TabIndex = 27;
@@ -359,7 +362,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(457, 346);
+            this.label12.Location = new System.Drawing.Point(457, 332);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 26;
@@ -368,7 +371,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(457, 294);
+            this.label13.Location = new System.Drawing.Point(457, 280);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 13);
             this.label13.TabIndex = 25;
@@ -377,7 +380,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(457, 242);
+            this.label14.Location = new System.Drawing.Point(457, 228);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 13);
             this.label14.TabIndex = 24;
@@ -386,7 +389,7 @@
             // tbxRecommande1Nom
             // 
             this.tbxRecommande1Nom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related1Name", true));
-            this.tbxRecommande1Nom.Location = new System.Drawing.Point(575, 265);
+            this.tbxRecommande1Nom.Location = new System.Drawing.Point(575, 251);
             this.tbxRecommande1Nom.Name = "tbxRecommande1Nom";
             this.tbxRecommande1Nom.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande1Nom.TabIndex = 31;
@@ -394,7 +397,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(457, 268);
+            this.label15.Location = new System.Drawing.Point(457, 254);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 13);
             this.label15.TabIndex = 30;
@@ -403,7 +406,7 @@
             // tbxRecommande2Nom
             // 
             this.tbxRecommande2Nom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related2Name", true));
-            this.tbxRecommande2Nom.Location = new System.Drawing.Point(575, 317);
+            this.tbxRecommande2Nom.Location = new System.Drawing.Point(575, 303);
             this.tbxRecommande2Nom.Name = "tbxRecommande2Nom";
             this.tbxRecommande2Nom.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande2Nom.TabIndex = 33;
@@ -411,7 +414,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(457, 320);
+            this.label16.Location = new System.Drawing.Point(457, 306);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(82, 13);
             this.label16.TabIndex = 32;
@@ -420,7 +423,7 @@
             // tbxRecommande3Nom
             // 
             this.tbxRecommande3Nom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Related3Name", true));
-            this.tbxRecommande3Nom.Location = new System.Drawing.Point(575, 369);
+            this.tbxRecommande3Nom.Location = new System.Drawing.Point(575, 355);
             this.tbxRecommande3Nom.Name = "tbxRecommande3Nom";
             this.tbxRecommande3Nom.Size = new System.Drawing.Size(204, 20);
             this.tbxRecommande3Nom.TabIndex = 35;
@@ -428,7 +431,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(457, 372);
+            this.label17.Location = new System.Drawing.Point(457, 358);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 13);
             this.label17.TabIndex = 34;
@@ -460,9 +463,9 @@
             this.related3DataGridViewTextBoxColumn,
             this.related3NameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pagesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 399);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 387);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(794, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 282);
             this.dataGridView1.TabIndex = 36;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
@@ -607,7 +610,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 398);
+            this.panel1.Size = new System.Drawing.Size(794, 380);
             this.panel1.TabIndex = 37;
             // 
             // btnSave
@@ -658,7 +661,6 @@
             // 
             this.tbxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSearch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pagesBindingSource, "Next", true));
             this.tbxSearch.Location = new System.Drawing.Point(78, 675);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(394, 20);
@@ -675,11 +677,42 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "Recherche";
             // 
+            // tbxIndexLocation
+            // 
+            this.tbxIndexLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxIndexLocation.Location = new System.Drawing.Point(159, 709);
+            this.tbxIndexLocation.Name = "tbxIndexLocation";
+            this.tbxIndexLocation.Size = new System.Drawing.Size(313, 20);
+            this.tbxIndexLocation.TabIndex = 42;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(78, 707);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Browse";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 712);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(43, 13);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "Fichiers";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 735);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.tbxIndexLocation);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.btnNew);
@@ -691,7 +724,7 @@
             this.Controls.Add(this.button1);
             this.MinimumSize = new System.Drawing.Size(816, 478);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "WebEdit";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pages)).EndInit();
@@ -769,6 +802,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn related3NameDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tbxIndexLocation;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label19;
     }
 }
 

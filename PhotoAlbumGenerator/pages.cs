@@ -4,5 +4,8 @@
 
     partial class pages
     {
+        partial class PagesDataTable
+        {
+        }
     }
 }

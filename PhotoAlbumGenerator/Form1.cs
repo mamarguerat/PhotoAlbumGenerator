@@ -30,13 +30,19 @@ namespace PhotoAlbumGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (DataRow row in App.Pages.Rows)
+            int numPages = App.Pages.Rows.Count;
+
+            string pageListContent = "";
+
+            int lastPage = 0;
+            int actualPage = 0;
+            int maxPage = numPages / 5;
+            if (numPages % 5 != 0)
+                maxPage++;
+
+            for (int i = numPages; i != 0; i--)
             {
-                string path = row["Folder"].ToString();
-                DirectoryInfo d = new DirectoryInfo(path);
-                string text = File.ReadAllText("main.html");
-                text = text.Replace("$TITLE", row["Title"].ToString());
-                text = text.Replace("$NAME", row["Name"].ToString());
+                DataRow row = App.Pages.Rows[i - 1];
 
                 string category = "";
                 switch (row["Category"].ToString())
@@ -61,6 +67,29 @@ namespace PhotoAlbumGenerator
                         break;
                 }
 
+                actualPage = (numPages - i) / 5;
+
+                if (lastPage != actualPage)
+                    WriteIndexFile(ref pageListContent, ref lastPage, actualPage, maxPage);
+
+                string pageListEntry;
+                if (i == numPages)
+                    pageListEntry = File.ReadAllText("pages-first.html");
+                else
+                    pageListEntry = File.ReadAllText("pages-content.html");
+                pageListEntry = pageListEntry.Replace("$TITLE", row["Title"].ToString());
+                pageListEntry = pageListEntry.Replace("$NAME", row["Name"].ToString());
+                pageListEntry = pageListEntry.Replace("$CATEGORY", category);
+                pageListEntry = pageListEntry.Replace("$DATE_SHORT", row["Date (2020-01-30)"].ToString());
+                pageListEntry = pageListEntry.Replace("$DATE", row["Date (30 janvier 2020)"].ToString());
+                pageListContent += pageListEntry;
+
+                string path = row["Folder"].ToString();
+                DirectoryInfo d = new DirectoryInfo(path);
+                string text = File.ReadAllText("main.html");
+                text = text.Replace("$TITLE", row["Title"].ToString());
+                text = text.Replace("$NAME", row["Name"].ToString());
+
                 text = text.Replace("$CATEGORY", category);
                 text = text.Replace("$DATE_SHORT", row["Date (2020-01-30)"].ToString());
                 text = text.Replace("$DATE", row["Date (30 janvier 2020)"].ToString());
@@ -69,14 +98,14 @@ namespace PhotoAlbumGenerator
 
                 FileInfo[] files = d.GetFiles("*.jpg");
                 string gallery = "";
-                for (int i = 0; i < files.Length; i++)
+                for (int j = 0; j < files.Length; j++)
                 {
-                    string imageName = row["Name"].ToString() + "-" + i.ToString("D3") + ".jpg";
-                    File.Move(files[i].FullName, path + "\\" + imageName);
+                    string imageName = row["Name"].ToString() + "-" + j.ToString("D3") + ".jpg";
+                    File.Move(files[j].FullName, path + "\\" + imageName);
 
                     string image = File.ReadAllText("gallery.html");
                     image = image.Replace("$FILE_NAME", imageName);
-                    gallery = gallery + image;
+                    gallery += image;
                 }
 
                 text = text.Replace("$GALLERY", gallery);
@@ -94,10 +123,52 @@ namespace PhotoAlbumGenerator
 
                 File.WriteAllText(path + "/index.html", text);
             }
-
-
+            if (pageListContent != "")
+                WriteIndexFile(ref pageListContent, ref lastPage, 0, maxPage);
 
             MessageBox.Show("Success", "Success", MessageBoxButtons.OK);
+        }
+
+        private void WriteIndexFile(ref string pageListContent, ref int lastPage, int actualPage, int maxPage)
+        {
+            string pageList = File.ReadAllText("pages-main.html");
+            pageList = pageList.Replace("$CONTENT", pageListContent);
+            lastPage++;
+            //Pagination
+            string pagination = "";
+            if (lastPage == 1)
+                pagination += "<li class=\"pagination-first\"><a href = \"#\"> Première </a></li>\r\n" +
+                    "<li class=\"pagination-prev\"><a href = \"#\" rel=\"prev\"></a></li>\r\n";
+            else
+                pagination += "<li class=\"pagination-first\"><a href = \"/portfolio\"> Première </a></li>\r\n" +
+                    "<li class=\"pagination-prev\"><a href = \"page-" + (lastPage - 1).ToString() + "\" rel=\"prev\"></a></li>\r\n";
+            for (int i = 1; i < maxPage + 1; i++)
+            {
+                if (i == lastPage)
+                    pagination += "<li class=\"pagination-num current\"><a href = \"#\"> " + lastPage + " </a></li>\r\n";
+                else
+                    pagination += "<li class=\"pagination-num\"><a href = \"page-" + i.ToString() + "\"> " + i.ToString() + " </a></li>\r\n";
+
+            }
+            if (lastPage == maxPage)
+                pagination += "<li class=\"pagination-next\"><a href = \"#\" rel=\"next\"></a></li>\r\n" +
+                        "<li class=\"pagination-last\"><a href = \"#\"> Dernière </a> </li>\r\n";
+            else
+                pagination += "<li class=\"pagination-next\"><a href = \"page-" + (lastPage + 1).ToString() + "\" rel=\"next\"></a></li>\r\n" +
+                        "<li class=\"pagination-last\"><a href = \"page-" + maxPage.ToString() + "\"> Dernière </a> </li>\r\n";
+            pagination = pagination.Replace("page-1", "/portfolio");
+            pageList = pageList.Replace("$PAGINATION", pagination);
+            pageListContent = "";
+
+            //Write File
+            if (lastPage == 1)
+                File.WriteAllText(tbxIndexLocation.Text + "/index.html", pageList);
+            else
+            {
+                pageList = pageList.Replace(" first-full ", " ");
+                File.WriteAllText(tbxIndexLocation.Text + "/page-" + lastPage.ToString() + ".html", pageList);
+            }
+            lastPage = actualPage;
         }
 
         private string WriteRecommande(string titre, string nom)
@@ -155,8 +226,8 @@ namespace PhotoAlbumGenerator
 
         }
 
-        //Use singleton pattern to create an instance
-        static pages db;
+        //Use singleton pattern to create an instance
+        static pages db;
         protected static pages App
         {
             get
@@ -247,6 +318,15 @@ namespace PhotoAlbumGenerator
                 else
                     dataGridView1.DataSource = pagesBindingSource;
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            tbxIndexLocation.Text = "C:\\Users\\marti\\OneDrive\\Documents\\GitHub\\website\\portfolio";
+            //if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    tbxIndexLocation.Text = folderBrowserDialog1.SelectedPath;
+            //}
         }
     }
 }
