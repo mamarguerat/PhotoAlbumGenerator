@@ -326,7 +326,7 @@ namespace PhotoAlbumGenerator
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 tbxIndexLocation.Text = folderBrowserDialog1.SelectedPath;
-           /}
+            }
         }
     }
 }
