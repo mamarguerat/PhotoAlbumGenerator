@@ -246,6 +246,7 @@ namespace PhotoAlbumGenerator
                 App.Pages.ReadXml(fileName);
             pagesBindingSource.DataSource = App.Pages;
             panel1.Enabled = false;
+            tbxIndexLocation.Text = "C:\\Users\\marti\\OneDrive\\Documents\\GitHub\\website\\portfolio";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -322,11 +323,10 @@ namespace PhotoAlbumGenerator
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            tbxIndexLocation.Text = "C:\\Users\\marti\\OneDrive\\Documents\\GitHub\\website\\portfolio";
-            //if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    tbxIndexLocation.Text = folderBrowserDialog1.SelectedPath;
-            //}
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                tbxIndexLocation.Text = folderBrowserDialog1.SelectedPath;
+           /}
         }
     }
 }
